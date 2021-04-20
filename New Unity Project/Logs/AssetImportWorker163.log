@@ -1,0 +1,45 @@
+Using pre-set license
+Built from '2021.1/release' branch; Version is '2021.1.1f1 (6fdc41dfa55a) revision 7330881'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Education; OS build 19041.867; Version 2004; 64bit' Language: 'en' Physical Memory: 16294 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.1.1f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker163
+-projectPath
+I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project
+-logFile
+Logs/AssetImportWorker163.log
+-srvPort
+59324
+Successfully changed project path to: I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project
+I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project
+Using Asset Import Pipeline V2.
+Assertion failed on expression: 'm_ErrorCode == MDB_MAP_RESIZED || !HasAbortingErrors()'
+
+received signal from system: SIGSEGV
+Stack trace:
+0x00007ff68e2c402c (Unity) StackWalker::GetCurrentCallstack
+0x00007ff68e2ca1c9 (Unity) StackWalker::ShowCallstack
+0x00007ff68eabbc93 (Unity) GetStacktrace
+0x00007ff68e2c3710 (Unity) winutils::CrashHandler::DefaultSignalHandler
+0x00007ff69067d046 (Unity) seh_filter_exe
+0x00007ff69074586d (Unity) `__scrt_common_main_seh'::`1'::filt$0
+0x00007ff690649ff8 (Unity) _C_specific_handler
+0x00007ff957151f6f (ntdll) _chkstk
+0x00007ff957101454 (ntdll) RtlRaiseException
+0x00007ff957150a9e (ntdll) KiUserExceptionDispatcher
+0x00007ff68ebe647b (Unity) SourceAssetDBReadTxn::SourceAssetDBReadTxn
+0x00007ff68ebb4976 (Unity) SyncAssetFoldersWithDB
+0x00007ff68eba2a5d (Unity) InitializeAssetDatabaseV2
+0x00007ff68eb40e75 (Unity) AssetDatabase::InitializeAssetDatabase
+0x00007ff68e6b76c0 (Unity) Application::InitializeProject
+0x00007ff68eac5347 (Unity) WinMain
+0x00007ff690627832 (Unity) __scrt_common_main_seh
+0x00007ff955477034 (KERNEL32) BaseThreadInitThunk
+0x00007ff957102651 (ntdll) RtlUserThreadStart
+
