@@ -15,7 +15,7 @@ I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project
 -logFile
 Logs/AssetImportWorker125.log
 -srvPort
-59324
+51365
 Successfully changed project path to: I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project
 I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project
 Using Asset Import Pipeline V2.
@@ -23,23 +23,23 @@ Assertion failed on expression: 'm_ErrorCode == MDB_MAP_RESIZED || !HasAbortingE
 
 received signal from system: SIGSEGV
 Stack trace:
-0x00007ff68e2c402c (Unity) StackWalker::GetCurrentCallstack
-0x00007ff68e2ca1c9 (Unity) StackWalker::ShowCallstack
-0x00007ff68eabbc93 (Unity) GetStacktrace
-0x00007ff68e2c3710 (Unity) winutils::CrashHandler::DefaultSignalHandler
-0x00007ff69067d046 (Unity) seh_filter_exe
-0x00007ff69074586d (Unity) `__scrt_common_main_seh'::`1'::filt$0
-0x00007ff690649ff8 (Unity) _C_specific_handler
+0x00007ff7005c402c (Unity) StackWalker::GetCurrentCallstack
+0x00007ff7005ca1c9 (Unity) StackWalker::ShowCallstack
+0x00007ff700dbbc93 (Unity) GetStacktrace
+0x00007ff7005c3710 (Unity) winutils::CrashHandler::DefaultSignalHandler
+0x00007ff70297d046 (Unity) seh_filter_exe
+0x00007ff702a4586d (Unity) `__scrt_common_main_seh'::`1'::filt$0
+0x00007ff702949ff8 (Unity) _C_specific_handler
 0x00007ff957151f6f (ntdll) _chkstk
 0x00007ff957101454 (ntdll) RtlRaiseException
 0x00007ff957150a9e (ntdll) KiUserExceptionDispatcher
-0x00007ff68ebe647b (Unity) SourceAssetDBReadTxn::SourceAssetDBReadTxn
-0x00007ff68ebb4976 (Unity) SyncAssetFoldersWithDB
-0x00007ff68eba2a5d (Unity) InitializeAssetDatabaseV2
-0x00007ff68eb40e75 (Unity) AssetDatabase::InitializeAssetDatabase
-0x00007ff68e6b76c0 (Unity) Application::InitializeProject
-0x00007ff68eac5347 (Unity) WinMain
-0x00007ff690627832 (Unity) __scrt_common_main_seh
+0x00007ff700ee647b (Unity) SourceAssetDBReadTxn::SourceAssetDBReadTxn
+0x00007ff700eb4976 (Unity) SyncAssetFoldersWithDB
+0x00007ff700ea2a5d (Unity) InitializeAssetDatabaseV2
+0x00007ff700e40e75 (Unity) AssetDatabase::InitializeAssetDatabase
+0x00007ff7009b76c0 (Unity) Application::InitializeProject
+0x00007ff700dc5347 (Unity) WinMain
+0x00007ff702927832 (Unity) __scrt_common_main_seh
 0x00007ff955477034 (KERNEL32) BaseThreadInitThunk
 0x00007ff957102651 (ntdll) RtlUserThreadStart
 
