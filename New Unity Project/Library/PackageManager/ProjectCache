@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637539253152955208
-    m_Hash: 3840261939
+      ticks: 637550638272393049
+    m_Hash: 283077833
   m_LockFileStatus:
     m_FilePath: I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637539255033959537
-    m_Hash: 1817211033
+      ticks: 637550638272861816
+    m_Hash: 3630952375
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -597,6 +597,123 @@ m_ResolvedPackages:
   unityLifecycle:
     version: 
     nextVersion: 
+- packageId: com.unity.cinemachine@2.7.3
+  testable: 0
+  isDirectDependency: 1
+  version: 2.7.3
+  source: 1
+  resolvedPath: I:\Gaskins Griffin Y2\Repos\SpacePlatformer\New Unity Project\Library\PackageCache\com.unity.cinemachine@2.7.3
+  assetPath: Packages/com.unity.cinemachine
+  name: com.unity.cinemachine
+  displayName: Cinemachine
+  author:
+    name: 
+    email: 
+    url: 
+  category: cinematography
+  type: 
+  description: "Smart camera tools for passionate creators. \n\nNew starting from
+    2.7.1: Are you looking for the Cinemachine menu? It has moved to the GameObject
+    menu.\n\nIMPORTANT NOTE: If you are upgrading from the legacy Asset Store version
+    of Cinemachine, delete the Cinemachine asset from your project BEFORE installing
+    this version from the Package Manager."
+  status: 4
+  errors: []
+  versions:
+    all:
+    - 2.1.11-beta.1
+    - 2.1.12
+    - 2.1.13
+    - 2.2.0
+    - 2.2.7
+    - 2.2.8
+    - 2.2.9
+    - 2.2.10-preview.3
+    - 2.2.10-preview.4
+    - 2.3.1
+    - 2.3.3
+    - 2.3.4
+    - 2.3.5-preview.3
+    - 2.4.0-preview.3
+    - 2.4.0-preview.4
+    - 2.4.0-preview.6
+    - 2.4.0-preview.7
+    - 2.4.0-preview.8
+    - 2.4.0-preview.9
+    - 2.4.0-preview.10
+    - 2.4.0
+    - 2.5.0
+    - 2.6.0-preview.2
+    - 2.6.0-preview.3
+    - 2.6.0-preview.5
+    - 2.6.0-preview.8
+    - 2.6.0
+    - 2.6.1-preview.6
+    - 2.6.1
+    - 2.6.2-preview.1
+    - 2.6.2
+    - 2.6.3-preview.2
+    - 2.6.3
+    - 2.6.4
+    - 2.7.1
+    - 2.7.2
+    - 2.7.3
+    - 2.8.0-exp.1
+    - 2.8.0-exp.2
+    compatible:
+    - 2.7.2
+    - 2.7.3
+    - 2.8.0-exp.1
+    - 2.8.0-exp.2
+    verified: 2.7.3
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - camera
+  - follow
+  - rig
+  - fps
+  - cinematography
+  - aim
+  - orbit
+  - cutscene
+  - cinematic
+  - collision
+  - freelook
+  - cinemachine
+  - compose
+  - composition
+  - dolly
+  - track
+  - clearshot
+  - noise
+  - framing
+  - handheld
+  - lens
+  - impulse
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+  hasRegistry: 1
+  hideInEditor: 1
+  entitlements:
+    isAllowed: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 637523735910000000
+  documentationUrl: 
+  hasRepository: 1
+  repository:
+    type: git
+    url: git+https://github.com/Unity-Technologies/com.unity.cinemachine.git
+    revision: 51de586ba6f144b9e90ff52a72d14fb208acf1a8
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
 - packageId: com.unity.collab-proxy@1.3.9
   testable: 0
   isDirectDependency: 1
@@ -740,9 +857,11 @@ m_ResolvedPackages:
     - 3.0.3
     - 3.0.4
     - 3.0.5
+    - 3.0.6
     compatible:
     - 3.0.5
-    verified: 3.0.5
+    - 3.0.6
+    verified: 3.0.6
   dependencies: []
   resolvedDependencies: []
   keywords: []
@@ -1070,6 +1189,8 @@ m_ResolvedPackages:
     - 1.5.1
     - 1.5.3
     - 1.5.4
+    - 1.5.5
+    - 1.5.6
     - 2.0.0
     - 2.0.1-preview.1
     - 2.0.1
@@ -1089,6 +1210,8 @@ m_ResolvedPackages:
     - 2.1.1
     - 2.1.3
     - 2.1.4
+    - 2.1.5
+    - 2.1.6
     - 3.0.0-preview.1
     - 3.0.0-preview.3
     - 3.0.0-preview.4
@@ -1104,9 +1227,13 @@ m_ResolvedPackages:
     - 3.0.1
     - 3.0.3
     - 3.0.4
+    - 3.0.5
+    - 3.0.6
     compatible:
     - 3.0.4
-    verified: 3.0.4
+    - 3.0.5
+    - 3.0.6
+    verified: 3.0.6
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -1375,9 +1502,13 @@ m_ResolvedPackages:
     - 1.5.1
     - 1.5.2
     - 1.6.0-pre.3
+    - 1.6.0
+    - 1.6.1
     compatible:
     - 1.5.2
     - 1.6.0-pre.3
+    - 1.6.0
+    - 1.6.1
     verified: 1.5.2
   dependencies:
   - name: com.unity.ugui
@@ -3297,6 +3428,11 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 0.1.5-preview
+    - 0.1.6-preview
+    - 0.1.9-preview
+    - 1.0.0
+    - 1.0.5
     - 1.0.6
     compatible:
     - 1.0.6
@@ -3319,7 +3455,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637429759280000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -3351,6 +3487,19 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 0.0.12-preview.2
+    - 0.0.12-preview.5
+    - 0.0.12-preview.8
+    - 0.0.12-preview.10
+    - 0.0.12-preview.11
+    - 0.0.12-preview.13
+    - 0.0.12-preview.17
+    - 0.0.12-preview.19
+    - 0.0.12-preview.20
+    - 1.0.0-preview.1
+    - 1.0.1
+    - 1.1.0-preview.1
+    - 1.1.0
     - 1.2.1
     compatible:
     - 1.2.1
@@ -3371,12 +3520,12 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637324062630000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
+    url: git+https://github.com/Unity-Technologies/Unity.Mathematics.git
     revision: 71412d94b7a0b0fdbb3195a5e6559bf6a761e91a
     path: 
   unityLifecycle:
@@ -3403,9 +3552,30 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 1.0.9-preview.1
+    - 1.0.9-preview.2
+    - 1.0.10-preview
+    - 1.0.11-preview.1
+    - 1.1.0-preview.1
+    - 1.1.0-preview.2
+    - 1.2.0-preview.1
+    - 2.0.1
+    - 2.0.2
+    - 2.1.0
+    - 3.0.0
+    - 3.0.1
+    - 4.0.0
+    - 4.0.1
+    - 4.0.2
     - 4.0.3
+    - 5.0.0-pre.1
+    - 5.0.0-pre.2
+    - 5.0.0
     compatible:
     - 4.0.3
+    - 5.0.0-pre.1
+    - 5.0.0-pre.2
+    - 5.0.0
     verified: 4.0.3
   dependencies:
   - name: com.unity.2d.sprite
@@ -3439,7 +3609,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637408843940000000
   documentationUrl: 
   hasRepository: 1
   repository:
@@ -3471,9 +3641,28 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 1.0.0-preview.1
+    - 1.0.0-preview.4
+    - 2.0.1
+    - 2.0.2
+    - 2.0.3
+    - 2.0.4
+    - 2.0.5
+    - 2.0.6
+    - 2.1.0
+    - 3.0.0
+    - 3.0.1
+    - 3.0.2
+    - 4.0.0
     - 4.0.1
+    - 5.0.0-pre.1
+    - 5.0.0-pre.2
+    - 5.0.0
     compatible:
     - 4.0.1
+    - 5.0.0-pre.1
+    - 5.0.0-pre.2
+    - 5.0.0
     verified: 4.0.1
   dependencies: []
   resolvedDependencies: []
@@ -3492,7 +3681,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637328350450000000
   documentationUrl: 
   hasRepository: 1
   repository:
