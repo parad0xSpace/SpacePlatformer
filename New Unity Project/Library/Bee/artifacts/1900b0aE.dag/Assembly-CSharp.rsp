@@ -344,6 +344,8 @@
 "Assets/Scripts/CharacterController2D.cs"
 "Assets/Scripts/Parallax.cs"
 "Assets/Scripts/PlayerMovement.cs"
+"Assets/Scripts/RoomControl.cs"
+"Assets/Scripts/Serialization/Serialization Manager.cs"
 -langversion:8.0
 
 /deterministic
