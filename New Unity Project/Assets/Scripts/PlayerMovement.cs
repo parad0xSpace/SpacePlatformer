@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+    bool moveActive = true;
 
     public float runSpeed = 40f;
 
@@ -20,24 +21,32 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "OneHit")
+        {
+            runSpeed = 0f;
+            moveActive = false;
+        }
+    }
+
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && moveActive)
         {
             jump = true;
             animator.SetBool("jumping", true);
         }
 
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch") && moveActive)
         {
             crouch = true;
         }
-        else if (Input.GetButtonUp("Crouch"))
+        else if (Input.GetButtonUp("Crouch") && moveActive)
         {
             crouch = false;
         }
