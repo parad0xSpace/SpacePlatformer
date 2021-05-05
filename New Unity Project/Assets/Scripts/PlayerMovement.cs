@@ -11,6 +11,17 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool crouch = false;
     bool moveActive = true;
+    /*int direction;
+
+    public GameObject camControl;
+
+    public Transform faceDirection;
+    public Rigidbody2D rb;
+    public float dashSpeed;
+    public float dashTime;
+    public float startDashTime;
+    bool canDash;*/
+    
 
     public float runSpeed = 40f;
 
@@ -18,7 +29,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        
+        //dashTime = startDashTime;
+        //direction = 0;
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -50,11 +62,45 @@ public class PlayerMovement : MonoBehaviour
         {
             crouch = false;
         }
+
+        /*if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            direction = 4;
+            //camControl.ZoomOut();
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            direction = 3;
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            direction = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            direction = 5;
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            direction = 2;
+        }
+        else
+        {
+            direction = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && moveActive && canDash)
+        {
+            animator.SetBool("dashing", true);
+            canDash = false;
+        } */
     }
 
     public void OnLanding()
     {
         animator.SetBool("jumping", false);
+        //animator.SetBool("dashing", false);
+        //canDash = true;
     }
 
     public void OnCrouching(bool isCrouching)
@@ -66,6 +112,5 @@ public class PlayerMovement : MonoBehaviour
     {
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
-
     }
 }

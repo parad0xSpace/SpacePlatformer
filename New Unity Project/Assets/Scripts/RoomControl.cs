@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class RoomControl : MonoBehaviour
 {
 
     public GameObject virtCam;
+    public CinemachineVirtualCamera vcam;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,5 +26,4 @@ public class RoomControl : MonoBehaviour
            //Debug.Log("I'm off!");
         }
     }
-
 }

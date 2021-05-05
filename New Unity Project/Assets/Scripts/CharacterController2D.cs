@@ -23,6 +23,7 @@ public class CharacterController2D : MonoBehaviour
 	[Space]
 
 	public UnityEvent OnLandEvent;
+    public UnityEvent RechargeDash;
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
@@ -56,6 +57,7 @@ public class CharacterController2D : MonoBehaviour
 				m_Grounded = true;
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
+                    RechargeDash.Invoke();
 			}
 		}
 	}
