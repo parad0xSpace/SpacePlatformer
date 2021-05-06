@@ -125,8 +125,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1280297519
+  m_SortingLayer: 1
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: bfe17e4193e6ffc44a624238f74bc99a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 850
+  m_SlideReduction: 5
   m_CrouchSpeed: 0.6
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -160,6 +161,8 @@ MonoBehaviour:
     m_Bits: 55
   m_GroundCheck: {fileID: 4215738347469112396}
   m_CeilingCheck: {fileID: 4215738346904257138}
+  m_LeftWallCheck: {fileID: 0}
+  m_RightWallCheck: {fileID: 0}
   m_CrouchDisableCollider: {fileID: 4215738345945099162}
   OnLandEvent:
     m_PersistentCalls:

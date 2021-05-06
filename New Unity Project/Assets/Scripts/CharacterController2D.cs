@@ -4,17 +4,24 @@ using UnityEngine.Events;
 public class CharacterController2D : MonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
+    [SerializeField] private float m_SlideReduction = 5f;
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
 	[SerializeField] private LayerMask m_WhatIsGround;							// A mask determining what is ground to the character
 	[SerializeField] private Transform m_GroundCheck;							// A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;							// A position marking where to check for ceilings
-	[SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
+    [SerializeField] private Transform m_LeftWallCheck;                         // A position marking where to check for left walls
+    [SerializeField] private Transform m_RightWallCheck;                         // A position marking where to check for right walls
+    [SerializeField] private Collider2D m_CrouchDisableCollider;				// A collider that will be disabled when crouching
 
 	const float k_GroundedRadius = .05f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
+    private bool m_canDash;               // Whether or not player can dash
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
+    const float k_LeftWallRadius = .05f; // Radius of left wall check
+    const float k_RightWallRadius = .05f; //Radius of right wall check
+    private bool m_WallSlide; //Whether or not the player on on a wall
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
@@ -40,6 +47,9 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
+
+        if (RechargeDash == null)
+            RechargeDash = new UnityEvent();
 	}
 
 	private void FixedUpdate()
@@ -55,12 +65,23 @@ public class CharacterController2D : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
+                m_canDash = true;
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
                     RechargeDash.Invoke();
 			}
 		}
-	}
+        Collider2D[] leftWallCollider = Physics2D.OverlapCircleAll(m_LeftWallCheck.position, k_LeftWallRadius, m_WhatIsGround);
+        for (int i = 0; i < leftWallCollider.Length; i++)
+        {
+            if (leftWallCollider[i].gameObject != gameObject)
+            {
+                m_Grounded = true;
+                m_canDash = true;
+                RechargeDash.Invoke();
+            }
+        }
+    }
 
 
 	public void Move(float move, bool crouch, bool jump)
