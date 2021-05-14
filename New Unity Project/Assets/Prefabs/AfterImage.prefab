@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8300664430916234318
+--- !u!1 &4154638986208979168
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8300664430916234317}
-  - component: {fileID: 8300664430916234316}
-  - component: {fileID: 8300664430916234319}
+  - component: {fileID: 5869339982471875469}
+  - component: {fileID: 656006677826870770}
+  - component: {fileID: 8903257843554480777}
   m_Layer: 0
   m_Name: AfterImage
   m_TagString: Untagged
@@ -18,27 +18,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8300664430916234317
+--- !u!4 &5869339982471875469
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8300664430916234318}
+  m_GameObject: {fileID: 4154638986208979168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.747915, y: 6.49263, z: -41.521015}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8300664430916234316
+--- !u!212 &656006677826870770
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8300664430916234318}
+  m_GameObject: {fileID: 4154638986208979168}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,18 +84,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8300664430916234319
+--- !u!114 &8903257843554480777
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8300664430916234318}
+  m_GameObject: {fileID: 4154638986208979168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a8cee5c459bf5941bb4a051b4859657, type: 3}
+  m_Script: {fileID: 11500000, guid: f9fe3e5703c9920449b002ff066f3342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   activeTime: 0.1
-  alphaSet: 0.8
-  alphaMultiplier: 0.85
+  alphaSet: 0.4
