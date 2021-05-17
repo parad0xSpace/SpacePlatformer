@@ -106,6 +106,8 @@
 -define:ENABLE_TILEMAP
 -define:ENABLE_TIMELINE
 -define:ENABLE_LEGACY_INPUT_MANAGER
+-define:UNITY_POST_PROCESSING_STACK_V2
+-define:CINEMACHINE_POST_PROCESSING_V2
 -define:CINEMACHINE_TIMELINE
 -define:CINEMACHINE_PHYSICS_2D
 -define:CINEMACHINE_PHYSICS
@@ -316,6 +318,8 @@
 -r:"I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Core/Dependencies/MiscUtil/MiscUtil.dll"
 -r:"I:/Gaskins Griffin Y2/Repos/SpacePlatformer/New Unity Project/Library/PackageCache/com.unity.visualscripting@1.5.2/Runtime/VisualScripting.Flow/Dependencies/NCalc/Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Editor.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Postprocessing.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.Timeline.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.ref.dll"

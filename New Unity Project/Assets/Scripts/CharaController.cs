@@ -29,6 +29,8 @@ public class CharaController : MonoBehaviour
     private bool isWallJumping;
     // private bool hasWallJumped;
     private bool isDashing;
+    private bool hasClaws;
+    private bool hasPack;
 
     private int jumpCount;
     private int faceDir = 1;
@@ -66,6 +68,8 @@ public class CharaController : MonoBehaviour
     public Transform groundCheck;
     public Transform wallCheck;
 
+    public GameObject wallGrit;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -79,6 +83,24 @@ public class CharaController : MonoBehaviour
 
         canMove = true;
         canFlip = true;
+
+        if(PlayerPrefs.GetInt("ClimbingClaws") == 1)
+        {
+            hasClaws = true;
+        }
+        else
+        {
+            hasClaws = false;
+        }
+
+        if (PlayerPrefs.GetInt("BoosterPack") == 1)
+        {
+            hasPack = true;
+        }
+        else
+        {
+            hasPack = false;
+        }
     }
 
     void Update()
@@ -110,7 +132,7 @@ public class CharaController : MonoBehaviour
             rb.velocity = new Vector2(moveSpeed * moveDir, rb.velocity.y);
         }
 
-        if (isSliding && !isWallJumping)
+        if (isSliding && !isWallJumping && hasClaws)
         {
             if (rb.velocity.y < -wallSlideSpeed)
             {
@@ -164,7 +186,7 @@ public class CharaController : MonoBehaviour
             }
         }
 
-        if(Input.GetButtonDown("Horizontal") && wallCollision)
+        if(Input.GetButtonDown("Horizontal") && wallCollision && hasClaws)
         {
             if(!isGrounded && moveDir != faceDir)
             {
@@ -190,7 +212,7 @@ public class CharaController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * jumpHeightVar);
         }
 
-        if(Input.GetButtonDown("Dash"))
+        if(Input.GetButtonDown("Dash") && hasPack)
         {
             if(Time.time >= (lastDash + dashCooldown) && dashCount > 0)
             {
@@ -250,7 +272,7 @@ public class CharaController : MonoBehaviour
             jumpCount = jumpMax;
         }
 
-        if (wallCollision)
+        if (wallCollision && hasClaws)
         {
             canWallJump = true;
         }
@@ -317,7 +339,7 @@ public class CharaController : MonoBehaviour
 
     private void WallJump()
     {
-        if (canWallJump)
+        if (canWallJump && hasClaws)
         {
             isSliding = false;
             isJumping = true;
@@ -366,8 +388,25 @@ public class CharaController : MonoBehaviour
         anim.SetFloat("isWalking", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
         anim.SetBool("isJumping", isJumping);
         anim.SetBool("isSliding", isSliding);
+        if(isSliding)
+        {
+            wallGrit.SetActive(true);
+        }
+        else
+        {
+            wallGrit.SetActive(false);
+        }
     }
 
+    public void HasClaws()
+    {
+        PlayerPrefs.SetInt("ClimbingClaws", 1);
+    }
+
+    public void HasBooster()
+    {
+        PlayerPrefs.SetInt("BoosterPack", 1);
+    }
 
     private void OnDrawGizmos()
     {
