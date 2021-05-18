@@ -29,8 +29,6 @@ public class CharaController : MonoBehaviour
     private bool isWallJumping;
     // private bool hasWallJumped;
     private bool isDashing;
-    private bool hasClaws;
-    private bool hasPack;
 
     private int jumpCount;
     private int faceDir = 1;
@@ -60,6 +58,11 @@ public class CharaController : MonoBehaviour
 
     public int jumpMax = 1;
     public int dashMax = 1;
+
+    [HideInInspector]
+    public bool hasClaws;
+    [HideInInspector]
+    public bool hasPack;
 
     public Vector2 wallJumpDir;
 
@@ -401,11 +404,13 @@ public class CharaController : MonoBehaviour
     public void HasClaws()
     {
         PlayerPrefs.SetInt("ClimbingClaws", 1);
+        hasClaws = true;
     }
 
     public void HasBooster()
     {
         PlayerPrefs.SetInt("BoosterPack", 1);
+        hasPack = true;
     }
 
     private void OnDrawGizmos()
