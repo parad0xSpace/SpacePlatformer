@@ -344,6 +344,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/Scripts/AnimEventController.cs"
 "Assets/Scripts/CharaController.cs"
 "Assets/Scripts/Collectables.cs"
 "Assets/Scripts/DeathController.cs"
@@ -357,6 +358,7 @@
 "Assets/Scripts/PlayerPrefTracker.cs"
 "Assets/Scripts/RoomControl.cs"
 "Assets/Scripts/SaveData.cs"
+"Assets/Scripts/SceneTracker.cs"
 "Assets/Scripts/Serialization/Serialization Manager.cs"
 -langversion:8.0
 

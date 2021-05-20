@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -2799958076126886179
     second: CarmenPortrait_1
+  - first:
+      213: -7273126204838620570
+    second: CarmenPortrait_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,8 +124,8 @@ TextureImporter:
       name: CarmenPortrait_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 128
+        y: 128
         width: 128
         height: 128
       alignment: 0
@@ -134,6 +137,27 @@ TextureImporter:
       bones: []
       spriteID: dd6887ee6fc8429d0800000000000000
       internalID: -2799958076126886179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CarmenPortrait_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662520a504aa01b90800000000000000
+      internalID: -7273126204838620570
       vertices: []
       indices: 
       edges: []
