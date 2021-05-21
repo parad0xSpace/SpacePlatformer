@@ -43,6 +43,7 @@ public class PlayerPrefTracker : MonoBehaviour
         Debug.Log(PlayerPrefs.GetInt("TalkedToLyra"));
         Debug.Log(PlayerPrefs.GetFloat("RespawnX"));
         Debug.Log(PlayerPrefs.GetFloat("RespawnY"));
+        Debug.Log(PlayerPrefs.GetInt("PreviousScene"));
     }
 
     public void ResetPrefs()
@@ -57,6 +58,7 @@ public class PlayerPrefTracker : MonoBehaviour
         PlayerPrefs.SetInt("TalkedToLyra", 0);
         PlayerPrefs.SetFloat("RespawnX", 0);
         PlayerPrefs.SetFloat("RespawnY", 0);
+        PlayerPrefs.SetInt("PreviousScene", 0);
     }
 
     public void ActivateGodMode()

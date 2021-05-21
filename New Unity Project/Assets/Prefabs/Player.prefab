@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2251756466963107477}
   - component: {fileID: 1899570077726984365}
   - component: {fileID: 3062111751328933747}
+  - component: {fileID: 3420638051996832155}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -109,7 +110,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e5c7e06406fedc14f9511b57b93b26cf, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -222,7 +223,7 @@ MonoBehaviour:
   wallJumpDir: {x: 1.5, y: 2}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 1
   groundCheck: {fileID: 4215738347469112396}
   wallCheck: {fileID: 4215738346904257138}
   wallGrit: {fileID: 7429410332032216720}
@@ -238,6 +239,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd9f6a0f6447bab41aba96da05c143ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explainer: {fileID: 0}
+  imageAnim: {fileID: 0}
+--- !u!114 &3420638051996832155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4215738345945099142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20c69bc5ec8a5c54c8fbc8e84e7dc8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 4215738345945099160}
+  sceneChanger: {fileID: 0}
 --- !u!1 &4215738346904257139
 GameObject:
   m_ObjectHideFlags: 0

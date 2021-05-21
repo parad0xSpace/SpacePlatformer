@@ -358,7 +358,8 @@
 "Assets/Scripts/PlayerPrefTracker.cs"
 "Assets/Scripts/RoomControl.cs"
 "Assets/Scripts/SaveData.cs"
-"Assets/Scripts/SceneTracker.cs"
+"Assets/Scripts/SceneThings/SceneChanger.cs"
+"Assets/Scripts/SceneThings/SceneTracker.cs"
 "Assets/Scripts/Serialization/Serialization Manager.cs"
 -langversion:8.0
 

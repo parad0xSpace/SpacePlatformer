@@ -31,10 +31,12 @@ public class Collectables : MonoBehaviour
             Destroy(collision.gameObject);
             PackExplainer();
         }
-        if(gameObject.tag == "anchor")
+        if(collision.gameObject.tag == "anchor")
         {
+            Debug.Log("foo");
             PlayerPrefs.SetFloat("RespawnX", controller.transform.position.x);
             PlayerPrefs.SetFloat("RespawnY", controller.transform.position.y);
+            Destroy(collision.gameObject);
         }
     }
 
