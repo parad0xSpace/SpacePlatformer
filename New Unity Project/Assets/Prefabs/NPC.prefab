@@ -134,10 +134,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dia:
-    name: Carmen
+    name: NaN
     sentences:
     - Element 0
     portraits:
-    - {fileID: 8629593794392141416, guid: 993659a0902e8b145a20f742610b80b4, type: 3}
+    - {fileID: 0}
+    names: []
   diaSpace: {fileID: 0}
   charaCon: {fileID: 0}

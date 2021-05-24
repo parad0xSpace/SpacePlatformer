@@ -73,7 +73,7 @@ public class SceneTracker : MonoBehaviour
 
         if(!sceneChanged)
         {
-            Debug.Log("Getting previous spawn position " + PlayerPrefs.GetFloat("RespawnX")+ ", " + PlayerPrefs.GetFloat("RespawnY"));
+            //Debug.Log("Getting previous spawn position " + PlayerPrefs.GetFloat("RespawnX")+ ", " + PlayerPrefs.GetFloat("RespawnY"));
             player.position = new Vector3(PlayerPrefs.GetFloat("RespawnX"), PlayerPrefs.GetFloat("RespawnY"), player.position.z);
         }
     }
@@ -82,26 +82,55 @@ public class SceneTracker : MonoBehaviour
     {
         if (collision.gameObject.tag == "levelChanger")
         {
-            if (levelNumber == 1)
-            {
-                sceneChanger.SetActive(true);
-                sceneChanger.GetComponent<Animator>().SetTrigger("LoadTwo");
-            }
-            else if (levelNumber == 2)
-            {
-                sceneChanger.SetActive(true);
-                sceneChanger.GetComponent<Animator>().SetTrigger("LoadThree");
-            }
-            else if (levelNumber == 3)
-            {
-                sceneChanger.SetActive(true);
-                sceneChanger.GetComponent<Animator>().SetTrigger("LoadFour");
-            }
-            else if (levelNumber == 4)
-            {
-                sceneChanger.SetActive(true);
-                sceneChanger.GetComponent<Animator>().SetTrigger("LoadEnd");
-            }
+            ChangeLevel();
+        }
+    }
+
+    private void ChangeLevel()
+    {
+        if (levelNumber == 1)
+        {
+            sceneChanger.SetActive(true);
+            sceneChanger.GetComponent<Animator>().SetTrigger("LoadTwo");
+        }
+        else if (levelNumber == 2)
+        {
+            sceneChanger.SetActive(true);
+            sceneChanger.GetComponent<Animator>().SetTrigger("LoadThree");
+        }
+        else if (levelNumber == 3)
+        {
+            sceneChanger.SetActive(true);
+            sceneChanger.GetComponent<Animator>().SetTrigger("LoadFour");
+        }
+        else if (levelNumber == 4)
+        {
+            sceneChanger.SetActive(true);
+            sceneChanger.GetComponent<Animator>().SetTrigger("LoadEnd");
+        }
+    }
+
+    public void RestartLevel()
+    {
+        if (levelNumber == 1)
+        {
+            sceneChanger.SetActive(true);
+            sceneChanger.GetComponent<Animator>().SetTrigger("LoadOne");
+        }
+        else if (levelNumber == 2)
+        {
+            sceneChanger.SetActive(true);
+            sceneChanger.GetComponent<Animator>().SetTrigger("LoadTwo");
+        }
+        else if (levelNumber == 3)
+        {
+            sceneChanger.SetActive(true);
+            sceneChanger.GetComponent<Animator>().SetTrigger("LoadThree");
+        }
+        else if (levelNumber == 4)
+        {
+            sceneChanger.SetActive(true);
+            sceneChanger.GetComponent<Animator>().SetTrigger("LoadFour");
         }
     }
 }

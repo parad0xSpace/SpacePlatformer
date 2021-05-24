@@ -16,10 +16,10 @@ public class PlayerPrefTracker : MonoBehaviour
             {
                 DebugAll();
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha0))
+            /*else if (Input.GetKeyDown(KeyCode.Alpha0))
             {
                 ResetPrefs();
-            }
+            }*/
             else if(Input.GetKeyDown(KeyCode.Alpha8) && !gmActive)
             {
                 ActivateGodMode();

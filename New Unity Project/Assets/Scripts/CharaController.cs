@@ -80,6 +80,8 @@ public class CharaController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         jumpCount = jumpMax;
+        Debug.Log("Jump Max: " + jumpMax);
+        Debug.Log("Jump count: " + jumpCount);
         dashCount = dashMax;
 
         wallJumpDir.Normalize();
@@ -155,10 +157,6 @@ public class CharaController : MonoBehaviour
     private void CheckSurroundings()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
-        if (isGrounded)
-        {
-            isJumping = false;
-        }
 
         wallCollision = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
         if (!wallCollision)
@@ -185,9 +183,9 @@ public class CharaController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump"))
         {
-            if((isGrounded || (jumpCount > 0 && !wallCollision)) && canGroundJump)
+            if((isGrounded || !wallCollision))
             {
-                Debug.Log(jumpCount);
+                //Debug.Log(jumpCount);
                 GroundJump();
             }
             else
@@ -280,21 +278,22 @@ public class CharaController : MonoBehaviour
     {
         if (isGrounded)
         {
+            isJumping = false;
             jumpCount = jumpMax;
-        }
-
-        if (wallCollision && hasClaws)
-        {
-            canWallJump = true;
         }
 
         if (jumpCount <= 0)
         {
             canGroundJump = false;
         }
-        else
+        else if(jumpCount > 0)
         {
             canGroundJump = true;
+        }
+
+        if (wallCollision && hasClaws)
+        {
+            canWallJump = true;
         }
 
         /*if(hasWallJumped && moveDir == -lastWJumpDir)
@@ -319,12 +318,12 @@ public class CharaController : MonoBehaviour
             if(!isGrounded && wallCollision)
             {
                 WallJump();
-                Debug.Log("Wall jump");
+                //Debug.Log("Wall jump");
             }
             else if(isGrounded && canGroundJump)
             {
                 GroundJump();
-                Debug.Log("Delayed ground jump");
+                //Debug.Log("Delayed ground jump");
             }
         }
 
@@ -336,15 +335,20 @@ public class CharaController : MonoBehaviour
 
     private void GroundJump()
     {
+        //Debug.Log("Grounded status pre-jump: " + isGrounded);
         if (canGroundJump)
         {
-            Debug.Log("Ground jump");
-            jumpCount--;
-            isJumping = true;
+            //Debug.Log("Jumps remaining pre-jump: " + jumpCount);
+            //Debug.Log("Jumps remaining post-jump: " + jumpCount);
+            //Debug.Log("Ground jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            isGrounded = false;
+            isJumping = true;
             jumpTimer = 0f;
+            jumpCount--;
             jumpAttempt = false;
             checkJumpMulti = true;
+            //Debug.Log("Grounded status post-jump: " + isGrounded);
         }
     }
 

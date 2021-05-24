@@ -9,6 +9,7 @@ public class DiaManger : MonoBehaviour
 
     private Queue<string> sentences;
     private Queue<Sprite> portraits;
+    private Queue<string> names;
 
     private float timer;
     private float timerPrelim = 1.1f;
@@ -29,6 +30,7 @@ public class DiaManger : MonoBehaviour
     {
         sentences = new Queue<string>();
         portraits = new Queue<Sprite>();
+        names = new Queue<string>();
         timer = timerPrelim;
     }
 
@@ -50,14 +52,18 @@ public class DiaManger : MonoBehaviour
     {
         anim.SetBool("isOpen", true);
 
-        npcName.text = dia.name;
-
         sentences.Clear();
         portraits.Clear();
+        names.Clear();
 
         foreach(string sentence in dia.sentences)
         {
             sentences.Enqueue(sentence);
+        }
+
+        foreach(string name in dia.names)
+        {
+            names.Enqueue(name);
         }
 
         foreach(Sprite portrait in dia.portraits)
@@ -79,6 +85,8 @@ public class DiaManger : MonoBehaviour
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
+        string name = names.Dequeue();
+        npcName.text = name;
         Sprite portrait = portraits.Dequeue();
         image.GetComponent<Image>().sprite = portrait;
     }

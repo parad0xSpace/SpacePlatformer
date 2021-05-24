@@ -20,7 +20,7 @@ public class Collectables : MonoBehaviour
     {
         if(collision.gameObject.tag == "claws")
         {
-            Debug.Log("Touching claws");
+            //Debug.Log("Touching claws");
             controller.GetComponent<CharaController>().HasClaws();
             Destroy(collision.gameObject);
             ClawExplainer();
@@ -33,7 +33,7 @@ public class Collectables : MonoBehaviour
         }
         if(collision.gameObject.tag == "anchor")
         {
-            Debug.Log("foo");
+            //Debug.Log("foo");
             PlayerPrefs.SetFloat("RespawnX", controller.transform.position.x);
             PlayerPrefs.SetFloat("RespawnY", controller.transform.position.y);
             Destroy(collision.gameObject);
@@ -42,14 +42,14 @@ public class Collectables : MonoBehaviour
 
     private void ClawExplainer()
     {
-        Debug.Log("Open explainer");
+        //Debug.Log("Open explainer");
         explainer.SetActive(true);
         imageAnim.SetBool("isOpen", true);
     }
 
     private void PackExplainer()
     {
-        Debug.Log("Open explainer");
+        //Debug.Log("Open explainer");
         explainer.SetActive(true);
         imageAnim.SetBool("isOpen", true);
     }

@@ -5,19 +5,35 @@ using UnityEngine;
 
 public class DeathController : MonoBehaviour
 {
-    public Animator anim;
+    public Animator pAnim;
+
+    public GameObject dieParticle;
+
+    public SceneTracker tracker;
+
+    void Start()
+    {
+        dieParticle.SetActive(false);
+        
+    }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "OneHit")
         {
-            anim.SetTrigger("die");
+            pAnim.SetTrigger("die");
         }
     }
 
-    public void RestartScene()
+    public void ParticleOn()
     {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(scene.name);
+        dieParticle.SetActive(true);
+        bool activeStatus = dieParticle.activeSelf;
+        Debug.Log(activeStatus);
+    }
+
+    public void RestartSceneTrigger()
+    {
+        tracker.RestartLevel();
     }
 }
