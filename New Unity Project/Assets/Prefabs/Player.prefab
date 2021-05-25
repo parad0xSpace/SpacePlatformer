@@ -209,7 +209,7 @@ MonoBehaviour:
   groundCheckRadius: 0.02
   wallCheckDistance: 0.6
   wallSlideSpeed: 1
-  dragMulti: 0.95
+  dragMulti: 0.9
   jumpHeightVar: 0.5
   wallJumpForce: 25
   jumpTimerSet: 0.15
@@ -218,6 +218,7 @@ MonoBehaviour:
   dashSpeed: 30
   imageDistance: 0.1
   dashCooldown: 0.35
+  groundCheckTimerSet: 0.05
   jumpMax: 1
   dashMax: 1
   hasClaws: 0

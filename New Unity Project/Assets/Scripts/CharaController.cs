@@ -12,6 +12,7 @@ public class CharaController : MonoBehaviour
     private float dashTimer; //dashTimeLeft
     private float lastImageXPos;
     private float lastDash = -100;
+    //private float groundCheckTimer;
 
 
     private bool isFacingRight = true;
@@ -29,6 +30,7 @@ public class CharaController : MonoBehaviour
     private bool isDashing;
     private bool canMove;
     private bool canFlip;
+    private bool checkedCircle;
 
     private int jumpCount;
     private int faceDir = 1;
@@ -55,6 +57,7 @@ public class CharaController : MonoBehaviour
     public float dashSpeed;
     public float imageDistance; //distanceBetweenImages
     public float dashCooldown;
+    //public float groundCheckTimerSet = .05f;
 
     public int jumpMax = 1;
     public int dashMax = 1;
@@ -87,6 +90,7 @@ public class CharaController : MonoBehaviour
         wallJumpDir.Normalize();
 
         jumpTimer = jumpTimerSet;
+        //groundCheckTimer = 0f;
 
         canMove = true;
         canFlip = true;
@@ -156,7 +160,16 @@ public class CharaController : MonoBehaviour
 
     private void CheckSurroundings()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+        checkedCircle = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
+        if(checkedCircle && rb.velocity.y < .01f)
+        {
+            isGrounded = true;
+        }
+        else
+        {
+            isGrounded = false;
+        }
 
         wallCollision = Physics2D.Raycast(wallCheck.position, transform.right, wallCheckDistance, whatIsGround);
         if (!wallCollision)
@@ -183,7 +196,7 @@ public class CharaController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump"))
         {
-            if((isGrounded || !wallCollision))
+            if((isGrounded || !wallCollision) && canGroundJump)
             {
                 //Debug.Log(jumpCount);
                 GroundJump();
@@ -336,20 +349,19 @@ public class CharaController : MonoBehaviour
     private void GroundJump()
     {
         //Debug.Log("Grounded status pre-jump: " + isGrounded);
-        if (canGroundJump)
-        {
-            //Debug.Log("Jumps remaining pre-jump: " + jumpCount);
-            //Debug.Log("Jumps remaining post-jump: " + jumpCount);
-            //Debug.Log("Ground jump");
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            isGrounded = false;
-            isJumping = true;
-            jumpTimer = 0f;
-            jumpCount--;
-            jumpAttempt = false;
-            checkJumpMulti = true;
-            //Debug.Log("Grounded status post-jump: " + isGrounded);
-        }
+        
+        //Debug.Log("Jumps remaining pre-jump: " + jumpCount);
+        //Debug.Log("Jumps remaining post-jump: " + jumpCount);
+        //Debug.Log("Ground jump");
+        //groundCheckTimer = groundCheckTimerSet;
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        isJumping = true;
+        jumpTimer = 0f;
+        jumpCount--;
+        jumpAttempt = false;
+        checkJumpMulti = true;
+        //Debug.Log("Grounded status post-jump: " + isGrounded);
+        
     }
 
     private void WallJump()
