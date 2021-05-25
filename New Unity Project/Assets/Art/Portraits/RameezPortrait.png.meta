@@ -8,6 +8,9 @@ TextureImporter:
   - first:
       213: -3663919746143465813
     second: RameezPortrait_1
+  - first:
+      213: 1561321566618697471
+    second: RameezPortrait_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,8 +124,8 @@ TextureImporter:
       name: RameezPortrait_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 128
+        y: 128
         width: 128
         height: 128
       alignment: 0
@@ -134,6 +137,27 @@ TextureImporter:
       bones: []
       spriteID: bae44953764272dc0800000000000000
       internalID: -3663919746143465813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RameezPortrait_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffeb67e41bdeaa510800000000000000
+      internalID: 1561321566618697471
       vertices: []
       indices: 
       edges: []

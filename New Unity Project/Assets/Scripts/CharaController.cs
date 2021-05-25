@@ -12,7 +12,7 @@ public class CharaController : MonoBehaviour
     private float dashTimer; //dashTimeLeft
     private float lastImageXPos;
     private float lastDash = -100;
-    //private float groundCheckTimer;
+    private float groundCheckTimer;
 
 
     private bool isFacingRight = true;
@@ -57,7 +57,7 @@ public class CharaController : MonoBehaviour
     public float dashSpeed;
     public float imageDistance; //distanceBetweenImages
     public float dashCooldown;
-    //public float groundCheckTimerSet = .05f;
+    public float groundCheckTimerSet = .05f;
 
     public int jumpMax = 1;
     public int dashMax = 1;
@@ -83,36 +83,18 @@ public class CharaController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         jumpCount = jumpMax;
-        Debug.Log("Jump Max: " + jumpMax);
-        Debug.Log("Jump count: " + jumpCount);
+        //Debug.Log("Jump Max: " + jumpMax);
+        //Debug.Log("Jump count: " + jumpCount);
         dashCount = dashMax;
 
         wallJumpDir.Normalize();
 
         jumpTimer = jumpTimerSet;
-        //groundCheckTimer = 0f;
+        groundCheckTimer = 0f;
 
         canMove = true;
         canFlip = true;
         isTalking = false;
-
-        if(PlayerPrefs.GetInt("ClimbingClaws") == 1)
-        {
-            hasClaws = true;
-        }
-        else
-        {
-            hasClaws = false;
-        }
-
-        if (PlayerPrefs.GetInt("BoosterPack") == 1)
-        {
-            hasPack = true;
-        }
-        else
-        {
-            hasPack = false;
-        }
     }
 
     void Update()
@@ -162,7 +144,7 @@ public class CharaController : MonoBehaviour
     {
         checkedCircle = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
 
-        if(checkedCircle && rb.velocity.y < .01f)
+        if(checkedCircle &&rb.velocity.y < .01f)
         {
             isGrounded = true;
         }
@@ -289,7 +271,12 @@ public class CharaController : MonoBehaviour
 
     private void JumpCheck() //CheckIfCanJump
     {
-        if (isGrounded)
+        if(groundCheckTimer > 0)
+        {
+            groundCheckTimer -= Time.deltaTime;
+        }
+
+        if (isGrounded && groundCheckTimer <= 0)
         {
             isJumping = false;
             jumpCount = jumpMax;
@@ -348,25 +335,28 @@ public class CharaController : MonoBehaviour
 
     private void GroundJump()
     {
-        //Debug.Log("Grounded status pre-jump: " + isGrounded);
-        
-        //Debug.Log("Jumps remaining pre-jump: " + jumpCount);
-        //Debug.Log("Jumps remaining post-jump: " + jumpCount);
-        //Debug.Log("Ground jump");
-        //groundCheckTimer = groundCheckTimerSet;
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-        isJumping = true;
-        jumpTimer = 0f;
-        jumpCount--;
-        jumpAttempt = false;
-        checkJumpMulti = true;
-        //Debug.Log("Grounded status post-jump: " + isGrounded);
-        
+        if (!isTalking)
+        {
+            //Debug.Log("Grounded status pre-jump: " + isGrounded);
+
+            //Debug.Log("Jumps remaining pre-jump: " + jumpCount);
+            //Debug.Log("Jumps remaining post-jump: " + jumpCount);
+            //Debug.Log("Ground jump");
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            isJumping = true;
+            jumpTimer = 0f;
+            isGrounded = false;
+            jumpCount--;
+            groundCheckTimer = groundCheckTimerSet;
+            jumpAttempt = false;
+            checkJumpMulti = true;
+            //Debug.Log("Grounded status post-jump: " + isGrounded);
+        }
     }
 
     private void WallJump()
     {
-        if (canWallJump && hasClaws)
+        if (!isTalking && canWallJump && hasClaws)
         {
             isSliding = false;
             isJumping = true;
