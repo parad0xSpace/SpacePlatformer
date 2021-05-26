@@ -27,8 +27,8 @@ Transform:
   m_LocalPosition: {x: 77.16172, y: 57.627857, z: -93.5439}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3521700694265730044}
   - {fileID: 3521700693761668140}
+  - {fileID: 3521700694265730044}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -64,7 +64,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3521700692595092444}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3521700693761668143
 Camera:
@@ -244,7 +244,7 @@ PrefabInstance:
       objectReference: {fileID: 1819413931835905739}
     - target: {fileID: 7219584670173897663, guid: b290d7cfa8649444f9f802fd8120227d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219584670173897663, guid: b290d7cfa8649444f9f802fd8120227d, type: 3}
       propertyPath: m_LocalPosition.x
